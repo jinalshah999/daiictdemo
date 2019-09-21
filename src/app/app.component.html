@@ -1,4 +1,4 @@
-<h1>Hello</h1>
+<!-- <h1>Hello</h1>
 <h1>{{name}}</h1>
 <button (click)="fun1()" >Click Me</button>
 <input type="text" [(ngModel)]="str" >
@@ -6,5 +6,36 @@
 
 <input type="number" [(ngModel)]="no1"  >
 <input type="number" [(ngModel)]="no2" >
-<button (click)="onAdd()" >Add</button>
+<button (click)="ans=no1+no2" >Add</button>
 <h1>{{ans}}</h1>
+
+<ul>
+  <li *ngFor="let item of arr" >{{item}}</li>
+</ul> -->
+<input class="form-control" [(ngModel)]="Id" placeholder="Enter Id" >
+<input class="form-control" [(ngModel)]="Title" placeholder="Enter Title" >
+<input class="form-control" [(ngModel)]="Status"  placeholder="Enter Status" >
+<button class="btn btn-primary" (click)="onAddTask()"  >Add Task</button>
+<table class="table" >
+  <thead>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Status</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of tasks"  >
+      <td>{{item.Id}}</td>
+      <td>{{item.Title}}</td>
+      <td>{{item.Status}}</td>
+      <td>
+        <button (click)="onDeleteTask(item)" class="btn btn-primary" >Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
